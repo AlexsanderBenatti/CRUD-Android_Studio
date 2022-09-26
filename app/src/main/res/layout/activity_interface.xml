@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="24dp"
+    >
+    <TextView
+        android:id="@+id/interfaceLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Interface"
+        android:textSize="32dp"
+        android:fontFamily="monospace"
+        android:textColor="@color/black"
+        />
+    <Button
+        android:id="@+id/createBtn"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:text="Criar"
+        />
+    <Button
+        android:id="@+id/listBtn"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:text="Listar"
+        />
+    <Button
+        android:id="@+id/deleteBtn"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:text="Deletar"
+        />
+    <Button
+        android:id="@+id/updateBtn"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:text="Atualizar"
+        />
+
+</LinearLayout>
