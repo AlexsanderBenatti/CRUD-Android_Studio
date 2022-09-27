@@ -12,7 +12,7 @@
         android:id="@+id/interfaceLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Interface"
+        android:text="Menu"
         android:textSize="32dp"
         android:fontFamily="monospace"
         android:textColor="@color/black"

@@ -18,5 +18,15 @@ class InterfaceActivity : AppCompatActivity() {
             val i = Intent(this, MainActivity::class.java)
             startActivity(i)
         }
+
+        listBtn.setOnClickListener {
+            val i = Intent(this, ListActivity::class.java)
+            startActivity(i)
+        }
+
+        deleteBtn.setOnClickListener {
+            val i = Intent(this, DeleteAcitvity::class.java)
+            startActivity(i)
+        }
     }
 }

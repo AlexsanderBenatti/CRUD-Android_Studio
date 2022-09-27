@@ -36,8 +36,8 @@
         android:layout_gravity="center_horizontal"/>
 
     <Button
-        android:id="@+id/btnCadastrar"
-        android:text="Cadastrar"
+        android:id="@+id/btnAtualizar"
+        android:text="Atualizar"
         android:layout_width="125dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"/>
