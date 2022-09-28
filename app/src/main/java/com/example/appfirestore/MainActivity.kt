@@ -39,12 +39,11 @@ class MainActivity : AppCompatActivity() {
             db.collection("cadastro").document(edtNome.text.toString())
                 .set(pessoa)
                 .addOnSuccessListener {
-                    Log.d(TAG, "DocumentSnapshot added")
+                    Toast.makeText(this, "Cadastro atualizado com sucesso!", Toast.LENGTH_SHORT).show()
                 }
-                .addOnFailureListener { e ->
-                    Log.w(TAG, "Error adding document", e)
+                .addOnFailureListener {
+                    Toast.makeText(this, "Cadastro deu errado!", Toast.LENGTH_SHORT).show()
                 }
-            Toast.makeText(this, " Cadastrado com sucesso", Toast.LENGTH_SHORT).show()
         }
 
         btnVoltar.setOnClickListener {

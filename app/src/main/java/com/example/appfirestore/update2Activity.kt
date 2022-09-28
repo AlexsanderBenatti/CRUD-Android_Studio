@@ -1,9 +1,11 @@
 package com.example.appfirestore
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -28,7 +30,15 @@ class update2Activity : AppCompatActivity() {
                 "cep" to edtCep.text.toString()
             )
 
-            db.collection("cadastro").document()
+            db.collection("cadastro").document(edtNome.text.toString())
+                .set(pessoa)
+                .addOnSuccessListener { Toast.makeText(this, "Cadastro atualizado com sucesso!", Toast.LENGTH_SHORT).show() }
+                .addOnFailureListener { Toast.makeText(this, "Cadastro não atualizou!", Toast.LENGTH_SHORT).show() }
+        }
+
+        btnVoltar.setOnClickListener {
+            val i = Intent(this, InterfaceActivity::class.java)
+            startActivity(i)
         }
     }
 }

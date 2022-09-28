@@ -24,10 +24,12 @@ class DeleteAcitvity : AppCompatActivity() {
             val nomeDeletar = edtNome.text.toString()
             db.collection("cadastro").document(nomeDeletar)
                 .delete()
-                .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully deleted!")
-                    Toast.makeText(this, "Excluído com sucesso", Toast.LENGTH_SHORT)
+                .addOnSuccessListener {
+                    Toast.makeText(this, "Excluído com sucesso!", Toast.LENGTH_SHORT)
                 }
-                .addOnFailureListener { e -> Log.w(TAG, "Error deleting document", e) }
+                .addOnFailureListener {
+                    Toast.makeText(this, "A exclusão falhou!", Toast.LENGTH_SHORT)
+                }
         }
 
         btnVoltar.setOnClickListener {
