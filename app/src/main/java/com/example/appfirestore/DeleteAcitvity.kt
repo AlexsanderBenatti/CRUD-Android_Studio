@@ -25,10 +25,10 @@ class DeleteAcitvity : AppCompatActivity() {
             db.collection("cadastro").document(nomeDeletar)
                 .delete()
                 .addOnSuccessListener {
-                    Toast.makeText(this, "Excluído com sucesso!", Toast.LENGTH_SHORT)
+                    Toast.makeText(this, "Excluído com sucesso!", Toast.LENGTH_SHORT).show()
                 }
                 .addOnFailureListener {
-                    Toast.makeText(this, "A exclusão falhou!", Toast.LENGTH_SHORT)
+                    Toast.makeText(this, "A exclusão falhou!", Toast.LENGTH_SHORT).show()
                 }
         }
 

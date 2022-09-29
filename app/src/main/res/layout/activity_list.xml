@@ -26,6 +26,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=""
+        android:layout_marginBottom="50dp"
+        />
+
+
+    <EditText
+        android:id="@+id/edtNomeAtualizar"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Digite o nome que deseja atualizar"
+        />
+
+    <Button
+        android:id="@+id/btnListar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Atualizar este cadastro"
         />
 
     <Button

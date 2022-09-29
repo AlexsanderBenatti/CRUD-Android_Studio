@@ -22,6 +22,25 @@ class update2Activity : AppCompatActivity() {
         val btnAtualizar: Button = findViewById(R.id.btnAtualizar)
         val btnVoltar: Button = findViewById(R.id.btnVoltar)
 
+        val nome:String = intent.getStringExtra("nomeAtualizar").toString()
+
+        db.collection("cadastro").document(nome)
+            .get()
+            .addOnSuccessListener { document ->
+                if (document != null) {
+                    edtNome.setText("${document.data?.get("nome")}")
+                    edtEndereco.setText("${document.data?.get("endereco")}")
+                    edtBairro.setText("${document.data?.get("bairro")}")
+                    edtCep.setText("${document.data?.get("cep")}")
+                }
+                else {
+                    Toast.makeText(this, "Documento não apresenta dados", Toast.LENGTH_SHORT).show()
+                }
+            }
+            .addOnFailureListener {
+                Toast.makeText(this, "Não foi possível pegar os dados desse cadastro", Toast.LENGTH_SHORT).show()
+            }
+
         btnAtualizar.setOnClickListener {
             val pessoa = hashMapOf(
                 "nome" to edtNome.text.toString(),
