@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
             db.collection("cadastro").document(edtNome.text.toString())
                 .set(pessoa)
                 .addOnSuccessListener {
-                    Toast.makeText(this, "Cadastro atualizado com sucesso!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Cadastro criado com sucesso!", Toast.LENGTH_SHORT).show()
                 }
                 .addOnFailureListener {
                     Toast.makeText(this, "Cadastro deu errado!", Toast.LENGTH_SHORT).show()

@@ -19,8 +19,8 @@ class ListActivity : AppCompatActivity() {
         val db = Firebase.firestore
         val edtNomeAtualizar: EditText = findViewById(R.id.edtNomeAtualizar)
         val btnAtualizarNome: Button = findViewById(R.id.btnListar)
+        val btnDeletarNome: Button = findViewById(R.id.btnDeletar)
 
-        val nome = edtNomeAtualizar.text.toString()
 
         val resultTxt: TextView = findViewById(R.id.listTxt)
         db.collection("cadastro")
@@ -39,9 +39,32 @@ class ListActivity : AppCompatActivity() {
         val btnVoltarMenu = findViewById<Button>(R.id.btnVoltar)
 
         btnAtualizarNome.setOnClickListener {
-            val i = Intent(this, update2Activity::class.java)
-            i.putExtra("nomeAtualizar", nome)
-            startActivity(i)
+            val nomeAlterar = edtNomeAtualizar.text.toString()
+            if (nomeAlterar.isNotEmpty()) {
+                val i = Intent(this, update2Activity::class.java)
+                i.putExtra("Nome", nomeAlterar)
+                startActivity(i)
+            }
+            else {
+                Toast.makeText(this, "Escreva um nome para atualizar", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        btnDeletarNome.setOnClickListener {
+            val nomeDeletar = edtNomeAtualizar.text.toString()
+            if (nomeDeletar.isNotEmpty()) {
+                db.collection("cadastro").document(nomeDeletar)
+                    .delete()
+                    .addOnSuccessListener {
+                        Toast.makeText(this, "Excluído com sucesso!", Toast.LENGTH_SHORT).show()
+                    }
+                    .addOnFailureListener {
+                        Toast.makeText(this, "A exclusão falhou!", Toast.LENGTH_SHORT).show()
+                    }
+            }
+            else {
+                Toast.makeText(this, "Escreva um nome para atualizar", Toast.LENGTH_SHORT).show()
+            }
         }
 
         btnVoltarMenu.setOnClickListener {

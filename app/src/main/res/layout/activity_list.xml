@@ -1,54 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp"
-    android:orientation="vertical"
     android:gravity="center"
-    >
+    android:orientation="vertical"
+    android:padding="24dp">
 
     <TextView
         android:id="@+id/listLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Listar 📜"
-        android:textSize="28dp"
-        android:textColor="@color/black"
-        android:textAlignment="center"
         android:layout_marginBottom="24dp"
-        />
+        android:text="Listar 📜"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="28dp" />
 
     <TextView
         android:id="@+id/listTxt"
-        android:textAlignment="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:text=""
-        android:layout_marginBottom="50dp"
-        />
+        android:textAlignment="center" />
 
 
     <EditText
         android:id="@+id/edtNomeAtualizar"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:hint="Digite o nome que deseja atualizar"
-        />
+        android:hint="Digite o nome que deseja atualizar" />
 
     <Button
         android:id="@+id/btnListar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Atualizar este cadastro"
-        />
+        android:text="Atualizar este cadastro" />
+
+    <Button
+        android:id="@+id/btnDeletar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="Deletar este cadastro" />
 
     <Button
         android:id="@+id/btnVoltar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Voltar para Menu"
-        />
+        android:text="Voltar para Menu" />
 
 </LinearLayout>
