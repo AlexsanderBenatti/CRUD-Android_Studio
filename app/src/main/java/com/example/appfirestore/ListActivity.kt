@@ -21,7 +21,6 @@ class ListActivity : AppCompatActivity() {
         val btnAtualizarNome: Button = findViewById(R.id.btnListar)
         val btnDeletarNome: Button = findViewById(R.id.btnDeletar)
 
-
         val resultTxt: TextView = findViewById(R.id.listTxt)
         db.collection("cadastro")
             .get()
